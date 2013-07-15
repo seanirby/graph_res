@@ -1,0 +1,86 @@
+body, html{
+  font-family: "Arial";
+  width: 100%;
+  height: 100%;
+}
+
+.selector{
+  display: none;
+}
+
+.digit_block, .mult_block{
+  float: left;
+  height: 100%;
+  width: 10%;
+  margin: 0;
+}
+
+.tol_block{
+  float: left;
+  height: 100%;
+  width: 14.25%;
+  margin: 0;
+}
+
+.temp_block{
+  float: left;
+  height: 100%;
+  width: 25%;
+  margin: 0;
+}
+
+.digit{
+  margin: 35px  0;
+  background-color: red;
+}
+
+.multiplier, .temp{
+  margin: 35px 0;
+  background-color: blue;
+}
+
+.tolerance{
+  margin: 65px 0 35px;
+  background-color: gold;
+}
+
+.band{
+  height: 30px;
+  width: 100%;
+}
+
+.column{
+  float: left;
+  margin: 0;
+  width: 33%;
+  height: 100%;
+  background: white;
+}
+
+.resistor{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wire{
+  position: absolute;
+  background-color: silver;
+  width: 10px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -300px;
+}
+
+.rbody{
+  top: 150px;
+  background-color: beige;
+  width: 200px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -225px;
+}
