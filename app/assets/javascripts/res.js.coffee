@@ -1,6 +1,7 @@
-#Initialize
 
 $(document).ready ->
+
+
 
   $("#controls a").click (e) ->
     type = $(this).data("type")
