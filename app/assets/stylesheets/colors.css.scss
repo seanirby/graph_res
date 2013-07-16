@@ -1,0 +1,38 @@
+
+
+@mixin silver{
+  background: rgb(244,244,244); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(244,244,244,1) 0%, rgba(147,147,147,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(244,244,244,1)), color-stop(100%,rgba(147,147,147,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(244,244,244,1) 0%,rgba(147,147,147,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(244,244,244,1) 0%,rgba(147,147,147,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(244,244,244,1) 0%,rgba(147,147,147,1) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba(244,244,244,1) 0%,rgba(147,147,147,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#939393',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin gold{
+  background: rgb(254,252,234); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(254,252,234,1) 0%, rgba(241,218,54,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(254,252,234,1)), color-stop(100%,rgba(241,218,54,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 */
+}
+
+.black{background: black;}
+.brown{background: rgb(151, 113, 45);}
+.red{background: red;}
+.orange{background: orange;}
+.yellow{background: yellow;}
+.green{background: green;}
+.blue{background: rgb(87, 134, 255);}
+.purple{background: purple;}
+.gray{background: rgb(194, 194, 194);}
+.white{background: white;}
+.red{background: #EC2A2A;}
+.silver{@include silver}
+.gold{@include gold}
+.aqua{background: rgb(90, 216, 221);}
