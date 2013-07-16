@@ -10,11 +10,19 @@ body, html{
   display: block;
 }
 
+.selector>a:active{
+  position: relative;
+  z-index: 3000;
+  outline: 4px red;
+}
+
 .selector>a:hover{
   position: relative;
   z-index: 3000;
   outline: 4px solid;
 }
+
+
 
 .selector{
   display: none;
