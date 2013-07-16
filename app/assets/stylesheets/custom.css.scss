@@ -10,10 +10,10 @@ body, html{
   display: block;
 }
 
-.selector>a:active{
+.selector>a.active, .selector>a.active:hover{
   position: relative;
   z-index: 3000;
-  outline: 4px red;
+  outline: 4px solid blue;
 }
 
 .selector>a:hover{
@@ -21,8 +21,6 @@ body, html{
   z-index: 3000;
   outline: 4px solid;
 }
-
-
 
 .selector{
   display: none;
