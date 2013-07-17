@@ -69,7 +69,7 @@ $(document).ready ->
     incrementBand()
     updateRes()
 
- $(".band_container").hover(
+  $(".band_container").hover(
     ->
       $(this).children(".band:first").hide()
       $(this).children(".band:last").fadeIn('fast')
