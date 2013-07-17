@@ -38,7 +38,7 @@ updateRes = ->
 
     tolerance = $('.active.resistor .tolerance.selector.band a.active').data("val")
     $("#resistance-value").html("#{resistance}&#8486")
-    $("#tolerance-value").html("#{tolerance}")
+    $("#tolerance-value").html("&plusmn #{tolerance}")
     $("#output-container").fadeIn('fast')
 
 
