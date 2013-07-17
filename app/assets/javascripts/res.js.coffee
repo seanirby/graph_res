@@ -1,30 +1,45 @@
+initialized = false;
+initialize = ->
+  $(".resistor .selector").each ->
+    size = $(this).children().size()
+    rand_index = Math.round(Math.random()*(size-1))
+    $(this).children(":eq(#{rand_index})").trigger("click")
+    initialized = true;
+    updateRes()
 
-
-  #get first two digits
-    #if 5 or 6 band
-      #push another digit onto digits array
-
-
-$(document).ready ->
-
-  getRes = () ->
+updateRes = ->
+  if initialized == true
+    $("#output-container").hide()
     digits = $('.active.resistor .digit.selector.band a.active').map ->
       return $(this).data("val")
-    digits = parseInt(digits.get().join(''))
+    digits = parseFloat(digits.get().join(''))
 
-    multiplier = $('.active.resistor .multiplier.selector.band a.active').data("val")
-    multiplier = parseInt(multiplier.get())
+    multiplier = parseFloat($('.active.resistor .multiplier.selector.band a.active').data("val"))
 
-    resistance = digits * multiplier
-    #tolerance = $('.active.resistor .tolerance.selector.band a.active').data("val")
-    $("#output").html(resistance)
+    if multiplier == 0.1
+      resistance = digits/10
+    else if multiplier == 0.01
+      resistance = digits/100
+    else
+      resistance = digits * multiplier
 
-  console.log(getRes)
+    if resistance > 999 && resistance < 1000000
+      resistance = (resistance/1000) + "k"
+    else if resistance >= 1000000
+      resistance = (resistance/1000000) + "M"
+
+    tolerance = $('.active.resistor .tolerance.selector.band a.active').data("val")
+    $("#resistance-value").html("#{resistance}&#8486")
+    $("#tolerance-value").html("#{tolerance}")
+    $("#output-container").fadeIn('fast')
+
+$(document).ready ->
 
   $("#controls a").click ->
     type = $(this).data("type")
     $(".active.resistor").removeClass("active").hide()
     $("##{type}").fadeIn('fast').addClass("active")
+    updateRes()
 
   $(".band_container").hover(
     ->
@@ -36,18 +51,13 @@ $(document).ready ->
   )
 
   $(".block").click ->
-    #get previous selected block in this band and remove active class
-    #add active class to this block
     $(this).parent().children(".active").removeClass("active")
     $(this).addClass("active")
-
-    #change color
-    color = $(this).css("background-color")
+    color = $(this).css("background")
     band = $(this).closest(".band_container").children(":first")
-    console.log(color)
     band.css("background", color)
-    getRes()
-    #recalculate resistance for active resistor
+    updateRes()
 
+  initialize()
 
 

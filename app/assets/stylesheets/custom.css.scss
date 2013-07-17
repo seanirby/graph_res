@@ -6,6 +6,26 @@ body, html{
   color: white;
 }
 
+#resistance-value{
+  font-size: 400%;
+}
+
+#tolerance-value, #temp-value{
+  font-size: 200%;
+}
+
+#output-container{
+  position: absolute;
+  top: 50%;
+  margin-top: -100px;
+  width: 100%;
+}
+
+#output{
+  height: 200px;
+  margin-left: 0
+}
+
 .block>a{
   display: block;
 }
