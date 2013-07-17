@@ -1,5 +1,7 @@
 initialized = false;
+
 initialize = ->
+  $(".arrow-up").css("visibility", "hidden")
   $(".resistor .selector").each ->
     size = $(this).children().size()
     rand_index = Math.round(Math.random()*(size-1))
@@ -33,15 +35,41 @@ updateRes = ->
     $("#tolerance-value").html("#{tolerance}")
     $("#output-container").fadeIn('fast')
 
+decrementBand = ->
+  current_band_number = parseInt($("#band-number").html())
+  $(".active.resistor").removeClass("active").hide()
+  if current_band_number == 5
+    $("#four-band.resistor").fadeIn('fast').addClass("active")
+    $("#band-number").html("4")
+    $(".arrow-up").css("visibility", "hidden")
+  else if current_band_number == 6
+    $("#five-band.resistor").fadeIn('fast').addClass("active")
+    $("#band-number").html("5")
+    $(".arrow-down").css("visibility", "visible")
+
+incrementBand = ->
+  current_band_number = parseInt($("#band-number").html())
+  $(".active.resistor").removeClass("active").hide()
+  if current_band_number == 4
+    $("#five-band.resistor").fadeIn('fast').addClass("active")
+    $("#band-number").html("5")
+    $(".arrow-up").css("visibility", "visible")
+  else if current_band_number == 5
+    $("#six-band.resistor").fadeIn('fast').addClass("active")
+    $("#band-number").html("6")
+    $(".arrow-down").css("visibility", "hidden")
+
 $(document).ready ->
 
-  $("#controls a").click ->
-    type = $(this).data("type")
-    $(".active.resistor").removeClass("active").hide()
-    $("##{type}").fadeIn('fast').addClass("active")
+  $("#input-container .arrow-up").click ->
+    decrementBand()
     updateRes()
 
-  $(".band_container").hover(
+  $("#input-container .arrow-down").click ->
+    incrementBand()
+    updateRes()
+
+ $(".band_container").hover(
     ->
       $(this).children(".band:first").hide()
       $(this).children(".band:last").fadeIn('fast')

@@ -4,9 +4,51 @@ body, html{
   height: 100%;
   margin: 0;
   color: white;
+  background: rgb(0, 113, 134)
 }
 
-#resistance-value{
+$arrow-size: 20px;
+$arrow-margin: 10px;
+
+a.arrow-up{
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: $arrow-size solid transparent;
+  border-right: $arrow-size solid transparent;
+  border-bottom: $arrow-size solid white;
+  margin-bottom: $arrow-margin;
+}
+
+a.arrow-down{
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: $arrow-size solid transparent;
+  border-right: $arrow-size solid transparent;
+  border-top: $arrow-size solid white;
+  margin-top: $arrow-margin;
+}
+
+#band-number{
+ text-align: center;
+ font-size: 400%;
+}
+
+#band-text{
+  font-size: 400%;
+  margin-left: 25px;
+}
+
+#band-selector-container{
+  display: inline-block;
+}
+
+#band-text-container{
+  display: inline-block;
+}
+
+#resistance-value, #band-value{
   font-size: 400%;
 }
 
@@ -14,11 +56,22 @@ body, html{
   font-size: 200%;
 }
 
+#input-container{
+  position: absolute;
+  top:50%;
+  margin-top: -100px;
+  margin-left: 200px;
+}
+
 #output-container{
   position: absolute;
   top: 50%;
   margin-top: -100px;
-  width: 100%;
+}
+
+#input{
+  height: 200px;
+  margin-right: 0;
 }
 
 #output{
