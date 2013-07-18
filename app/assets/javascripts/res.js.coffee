@@ -105,7 +105,9 @@ $(document).ready ->
   $(".block").click ->
     $(this).parent().children(".active").removeClass("active")
     $(this).addClass("active")
-    color = $(this).css("background")
+    color = $(this).css("backgroundColor")
+    if color == "transparent" || color == ""
+      color = $(this).css("background-image")
     band = $(this).closest(".band_container").children(":first")
     band.css("background", color)
     updateRes()
