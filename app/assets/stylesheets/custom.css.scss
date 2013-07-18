@@ -9,6 +9,7 @@ body, html{
 
 $arrow-size: 20px;
 $arrow-margin: 10px;
+$io-height: 200px;
 
 a.arrow-up{
   display: block;
@@ -58,24 +59,23 @@ a.arrow-down{
 
 #input-container{
   position: absolute;
-  top:50%;
-  margin-top: -100px;
-  margin-left: 200px;
+  top: $io-height/8;
+  margin-left: 10%;
 }
 
 #output-container{
   position: absolute;
-  top: 50%;
-  margin-top: -100px;
+  bottom: $io-height/8;
+  margin-right: 10%;
 }
 
 #input{
-  height: 200px;
+  height: $io-height;
   margin-right: 0;
 }
 
 #output{
-  height: 200px;
+  height: $io-height;
   margin-left: 0
 }
 
