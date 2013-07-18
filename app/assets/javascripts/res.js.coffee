@@ -106,10 +106,10 @@ $(document).ready ->
     $(this).parent().children(".active").removeClass("active")
     $(this).addClass("active")
     color = $(this).css("backgroundColor")
-    if color == "transparent" || color == ""
-      color = $(this).css("background-image")
+    image = $(this).css("backgroundImage")
     band = $(this).closest(".band_container").children(":first")
-    band.css("background", color)
+    band.css("backgroundColor", color)
+    band.css("backgroundImage", image)
     updateRes()
 
   #Initialize resistor values with random selection
