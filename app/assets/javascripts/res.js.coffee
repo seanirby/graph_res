@@ -66,6 +66,18 @@ incrementBand = ->
     $("#band-number").html("6")
     $(".arrow-down").css("visibility", "hidden")
 
+showGlimpse = ->
+  setTimeout(
+    ->
+      $(".active.resistor .band_container").trigger("mouseover")
+    2000
+  )
+  setTimeout(
+    ->
+      $(".active.resistor .band_container").trigger("mouseleave")
+    4000
+  )
+
 $(document).ready ->
 
   $("#input-container .arrow-up").click ->
@@ -93,6 +105,9 @@ $(document).ready ->
     band.css("background", color)
     updateRes()
 
+  #Initialize resistor values with random selection
   initialize()
 
+  #Give a glimpse of the selectors
+  showGlimpse()
 
