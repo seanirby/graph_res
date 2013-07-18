@@ -19,11 +19,13 @@ updateRes = ->
     multiplier = parseFloat($('.active.resistor .multiplier.selector.band a.active').data("val"))
 
     temp_coeff = $('.active.resistor .temp.selector.band a.active').data('val')
+
     if temp_coeff != null
       $("#temperature-value").html(temp_coeff)
     else
       $("#temperature-value").html('')
 
+    multiplier_symbol = ''
     if multiplier == 0.1
       resistance = digits/10
     else if multiplier == 0.01
@@ -32,12 +34,15 @@ updateRes = ->
       resistance = digits * multiplier
 
     if resistance > 999 && resistance < 1000000
-      resistance = (resistance/1000) + "k"
+      resistance = resistance/1000
+      multiplier_symbol = 'k'
     else if resistance >= 1000000
-      resistance = (resistance/1000000) + "M"
+      resistance = resistance/1000000
+      multiplier_symbol = "M"
 
     tolerance = $('.active.resistor .tolerance.selector.band a.active').data("val")
-    $("#resistance-value").html("#{resistance}&#8486")
+    $("#resistance-sig-figs").html("#{resistance}")
+    $("#resistance-units").html("#{multiplier_symbol}&#8486")
     $("#tolerance-value").html("&plusmn #{tolerance}")
     $("#output-container").fadeIn('fast')
 

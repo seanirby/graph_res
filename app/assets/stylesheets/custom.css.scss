@@ -7,7 +7,7 @@ body, html{
   background: rgb(0, 113, 134)
 }
 
-$arrow-size: 20px;
+$arrow-size: 25px;
 $arrow-margin: 10px;
 $io-height: 200px;
 
@@ -33,7 +33,7 @@ a.arrow-down{
 
 #band-number{
  text-align: center;
- font-size: 400%;
+ font-size: 600%;
 }
 
 #band-text{
@@ -49,8 +49,12 @@ a.arrow-down{
   display: inline-block;
 }
 
-#resistance-value, #band-value{
-  font-size: 500%;
+#resistance-sig-figs {
+  font-size: 600%;
+}
+
+#resistance-units {
+  font-size: 400%;
 }
 
 #tolerance-value, #temp-value{
