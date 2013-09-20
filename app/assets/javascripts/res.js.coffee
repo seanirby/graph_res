@@ -95,11 +95,16 @@ $(document).ready ->
 
   $(".band_container").hover(
     ->
+      clearTimeout($(this).data('timeout'));
       $(this).children(".band:first").hide()
       $(this).children(".band:last").fadeIn('fast')
     ->
-      $(this).children(".band:last").hide()
-      $(this).children(".band:first").fadeIn('fast')
+      elem = this;
+      t = setTimeout( ->
+        $(elem).children(".band:last").hide()
+        $(elem).children(".band:first").fadeIn('fast')
+      150);
+      $(this).data('timeout', t);
   )
 
   $(".block").click ->
